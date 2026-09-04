@@ -121,5 +121,22 @@ $emoji = $emojis[$skinType] ?? "🔍";
 
     </div>
 
+    <script>
+function burstConfetti() {
+    const colors = ['#e07b8a', '#f8c8d0', '#fde8c8', '#c0546a', '#fff'];
+    for (let i = 0; i < 60; i++) {
+        const piece = document.createElement('div');
+        piece.className = 'confetti-piece';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDuration = (2 + Math.random() * 1.5) + 's';
+        piece.style.width = piece.style.height = (6 + Math.random() * 6) + 'px';
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 3500);
+    }
+}
+window.addEventListener('load', burstConfetti);
+</script>
+
 </body>
 </html>

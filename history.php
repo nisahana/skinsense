@@ -123,10 +123,10 @@ $skinEmojis = [
         <!-- History Cards -->
         <?php if($totalAnalyses == 0): ?>
         <div class="empty-history">
-            <span>🔍</span>
-            <h3>No analyses yet!</h3>
-            <p>Upload your first photo to get started</p>
-            <a href="upload.php" class="btn-main">Start Detection →</a>
+            <span>🌸</span>
+            <h3>No scans yet let's fix that!</h3>
+            <p>Your skin's story starts with one photo. Ready when you are!</p>
+            <a href="upload.php" class="btn-main">Detect My Skin →</a>
         </div>
 
         <?php else: ?>

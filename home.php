@@ -44,7 +44,7 @@ require_once 'includes/db.php';
         <div class="mascot">🧴</div>
         <span class="sticker-badge">✨ AI-Powered Skin Analysis</span>
         <h2>Know Your Skin Type</h2>
-        <p>Upload your facial photo and let our AI detect your skin type instantly!</p>
+        <p>Upload a selfie and let our AI spill the tea on your skin type | glow-up starts here! ✨</p>
         <a href="upload.php" class="btn-main">Start Detection →</a>
     </div>
 </div>

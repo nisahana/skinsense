@@ -42,8 +42,8 @@ if(!isset($_SESSION['user_id'])) {
 
     <div class="upload-container">
         <div class="upload-box">
-            <h2>Upload Your Photo 📸</h2>
-            <p>Take a clear front-facing photo for best results</p>
+            <h2>Let's Get to Know Your Skin! 📸</h2>
+            <p>Upload a clear front-facing photo and we'll take it from there</p>
 
             <?php if(isset($error)): ?>
             <div class="alert-error"><?php echo $error; ?></div>
@@ -92,12 +92,15 @@ if(!isset($_SESSION['user_id'])) {
 
         </div>
 
-        <div class="disclaimer-side">
-            <div class="disclaimer-icon">⚠️</div>
-            <strong>Not a medical diagnosis</strong>
-            This tool gives an AI-based estimate for general skincare guidance only. It's not a substitute for professional dermatological advice. If you have persistent skin concerns, please consult a dermatologist.
-        </div>
+        </div> <!-- closes .upload-container -->
+
+<div class="disclaimer-side">
+    <div class="disclaimer-icon">⚠️</div>
+    <div>
+        <strong>Not a medical diagnosis</strong>
+        This tool gives an AI-based estimate for general skincare guidance only. It's not a substitute for professional dermatological advice. If you have persistent skin concerns, please consult a dermatologist.
     </div>
+</div>
 
     <script>
     document.getElementById('imageInput').addEventListener('change', function(e) {
@@ -137,6 +140,31 @@ function openLogoutModal(e) {
 function closeLogoutModal() {
     document.getElementById('logoutModal').classList.remove('active');
 }
+</script>
+
+<div class="ai-loading-overlay" id="aiLoadingOverlay">
+    <div class="ai-loading-icon">🔍</div>
+    <div class="ai-loading-text" id="aiLoadingText">Peeking at your pores... 👀</div>
+</div>
+
+<script>
+const loadingMessages = [
+    "Peeking at your pores... 👀",
+    "Consulting the skin wizards... 🧙",
+    "Counting your glow-factor... ✨",
+    "Almost there, hang tight! 💗"
+];
+
+document.querySelector('form[action="process_upload.php"]').addEventListener('submit', function() {
+    const overlay = document.getElementById('aiLoadingOverlay');
+    const textEl = document.getElementById('aiLoadingText');
+    overlay.classList.add('active');
+    let i = 0;
+    setInterval(() => {
+        i = (i + 1) % loadingMessages.length;
+        textEl.textContent = loadingMessages[i];
+    }, 1400);
+});
 </script>
 
 </body>

@@ -1,5 +1,7 @@
 {
     "require": {
+        "php": ">=8.2",
+        "ext-mysqli": "*",
         "dompdf/dompdf": "^3.1"
     }
 }
